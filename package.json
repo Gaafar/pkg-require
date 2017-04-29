@@ -1,0 +1,40 @@
+{
+  "name": "pkg-require",
+  "version": "0.0.1",
+  "description": "require node files relative to your package directory",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "watch:test": "jest --watch",
+    "lint": "eslint .",
+    "coverage": "jest --coverage; open __coverage__/lcov-report/index.html"
+  },
+  "keywords": [
+    "require",
+    "package",
+    "relative"
+  ],
+  "devDependencies": {
+    "eslint": "^3.17.1",
+    "eslint-config-airbnb": "^10.0.1",
+    "eslint-plugin-import": "^1.14.0",
+    "eslint-plugin-jsx-a11y": "^2.2.0",
+    "eslint-plugin-react": "^6.1.2",
+    "jest": "^19.0.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "foo",
+      "bar"
+    ],
+    "collectCoverageFrom": [
+      "**/*.js",
+      "!**/node_modules/**",
+      "!**/__coverage__/**"
+    ],
+    "coverageDirectory": "__coverage__"
+  },
+  "author": "Mostafa Gaafar",
+  "license": "MIT"
+}
