@@ -7,7 +7,9 @@
     "test": "jest",
     "watch:test": "jest --watch",
     "lint": "eslint .",
-    "coverage": "jest --coverage; open __coverage__/lcov-report/index.html"
+    "coverage": "jest --coverage",
+    "coverage:ui": "npm run coverage; open __coverage__/lcov-report/index.html",
+    "coveralls": "npm run coverage; cat ./__coverage__/lcov.info | ./node_modules/.bin/coveralls"
   },
   "keywords": [
     "require",
@@ -15,6 +17,7 @@
     "relative"
   ],
   "devDependencies": {
+    "coveralls": "^2.13.1",
     "eslint": "^3.17.1",
     "eslint-config-airbnb": "^10.0.1",
     "eslint-plugin-import": "^1.14.0",
