@@ -16,6 +16,10 @@
     "package",
     "relative"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Gaafar/pkg-require.git"
+  },
   "devDependencies": {
     "coveralls": "^2.13.1",
     "eslint": "^3.17.1",
