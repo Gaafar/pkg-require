@@ -21,7 +21,7 @@ root
 Now if you're in `bar.js` and want to require `foo.js` you need to go all the way up to the root dir and then specify the file you want.
 
 
-```
+```javascript
 const foo = require('../../../../foo/foo');
 ```
 
@@ -33,7 +33,7 @@ This is wrong for a few reasons:
 
 Wouldn't it be simpler if you can just write
 
-```
+```javascript
 const foo = require('foo/foo');
 ```
 
@@ -44,7 +44,7 @@ pkg-require will do exactly this. It looks all the way up your directory tree un
 
 ## TLDR Example
 
-```
+```javascript
 // create an instance that will find the nearest parent dir containing package.json from your __dirname
 const pkgRequire = require('pkg-require')(__dirname);
 
