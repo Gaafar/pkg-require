@@ -1,3 +1,8 @@
+[![Build Status](https://travis-ci.org/Gaafar/pkg-require.svg?branch=master)](https://travis-ci.org/Gaafar/pkg-require)
+[![Coverage Status](https://coveralls.io/repos/github/Gaafar/pkg-require/badge.svg?branch=master)](https://coveralls.io/github/Gaafar/pkg-require?branch=master)
+[![npm](https://img.shields.io/npm/v/pkg-require.svg?maxAge=2592000)](https://www.npmjs.com/package/pkg-require)
+[![Dependency Status](https://david-dm.org/Gaafar/pkg-require.svg)](https://david-dm.org/Gaafar/pkg-require)
+
 # pkg-require
 
 require node files relative to your package root directory
