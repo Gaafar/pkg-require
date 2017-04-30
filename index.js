@@ -38,8 +38,13 @@ function pkgRequireFactory(packageDir) {
   return requireInPkg;
 }
 
-function createInstance(modulePath) {
-  var packageDir = findPackageDir(modulePath);
+function createInstance(currentDirectory) {
+  if (!currentDirectory || !path.isAbsolute(currentDirectory)) {
+    throw new Error('module must be called with an absolute path as argument, '
+    + "eg: require('pkg-require')(__dirname)");
+  }
+
+  var packageDir = findPackageDir(currentDirectory);
   return pkgRequireFactory(packageDir);
 }
 
