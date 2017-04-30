@@ -29,11 +29,16 @@ function pkgRequireFactory(packageDir) {
     return path.join(packageDir, relativePath);
   }
 
+  function root() {
+    return packageDir;
+  }
+
   function requireInPkg(relativePath) {
     return require(resolve(relativePath));
   }
 
   requireInPkg.resolve = resolve;
+  requireInPkg.root = root;
 
   return requireInPkg;
 }

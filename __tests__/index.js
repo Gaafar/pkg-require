@@ -1,6 +1,11 @@
+const path = require('path');
+
 test('require from root package', () => {
   const pkgRequire = require('../')(__dirname);
 
+  const packageRoot = pkgRequire.root();
+  expect(path.isAbsolute(packageRoot)).toBe(true);
+  expect(packageRoot).toMatch(/\/pkg-require$/);
   expect(pkgRequire('__tests__/foo/foo')).toBe('foo');
 });
 
