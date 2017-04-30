@@ -1,6 +1,6 @@
 {
   "name": "pkg-require",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "require node files relative to your package directory",
   "main": "index.js",
   "scripts": {
