@@ -3,10 +3,6 @@ var fs = require('fs');
 
 // TODO: memoize with limit?
 function findPackageDir(dir) {
-  if (!dir || typeof dir !== 'string') {
-    throw new Error('missing directory argument');
-  }
-
   var dirContainsPackage = fs.existsSync(path.join(dir, 'package.json'));
 
   if (dirContainsPackage) {
@@ -44,9 +40,16 @@ function pkgRequireFactory(packageDir) {
 }
 
 function createInstance(currentDirectory) {
-  if (!currentDirectory || !path.isAbsolute(currentDirectory)) {
+  if (
+    !currentDirectory
+    || typeof currentDirectory !== 'string'
+    || !path.isAbsolute(currentDirectory)
+    ) {
     throw new Error('module must be called with an absolute path as argument, '
-    + "eg: require('pkg-require')(__dirname)");
+    + "eg: require('pkg-require')(__dirname), "
+    + 'instead received: '
+    + currentDirectory
+    );
   }
 
   var packageDir = findPackageDir(currentDirectory);

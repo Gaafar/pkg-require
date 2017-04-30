@@ -16,8 +16,7 @@ test('throw error if no package found', () => {
 });
 
 test('throw error if no absolute path provided to module', () => {
-  const errorMsg = 'module must be called with an absolute path as argument, '
-  + "eg: require('pkg-require')(__dirname)";
+  const errorMsg = 'module must be called with an absolute path as argument';
 
   const testCases = [
     undefined,
@@ -27,6 +26,8 @@ test('throw error if no absolute path provided to module', () => {
     '..',
     'dir',
     'dir/dir2',
+    1,
+    {},
   ];
 
   testCases.forEach((testCase) => {
