@@ -39,7 +39,9 @@ function pkgRequireFactory(packageDir) {
   return requireInPkg;
 }
 
-function createInstance(currentDirectory) {
+function createInstance(currentDirectory, options) {
+  options = options || {};
+  
   if (
     !currentDirectory
     || typeof currentDirectory !== 'string'
@@ -52,7 +54,7 @@ function createInstance(currentDirectory) {
     );
   }
 
-  var packageDir = findPackageDir(currentDirectory);
+  var packageDir = !options.forceRoot ? findPackageDir(currentDirectory) : currentDirectory;
   return pkgRequireFactory(packageDir);
 }
 
