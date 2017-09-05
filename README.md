@@ -72,8 +72,14 @@ now you can go write useful code instead of counting how many levels you need to
 ### `require`
 create a new instance for the package based on current file directory
 ```javascript
-const pkgRequire = require('pkg-require')(__dirname);
+const pkgRequire = require('pkg-require')(__dirname, options);
 ```
+use the optional options object to provide the following additional settings
+
+| option    | type    | default | description |
+| --------- | ------- | ------- | ----------- |
+| forceRoot | boolean | false   | directly use the root path, without looking for a package.json file |
+
 
 ### `pkgRequire()`
 require a file by passing its path relative to the directory containing `package.json`
